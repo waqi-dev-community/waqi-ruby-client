@@ -1,7 +1,13 @@
 require 'faraday'
+require "waqi/resources/CityFeed"
+require "waqi/resources/http_request"
 
 module Waqi
     class Client
+
+        include Waqi::Resource::CityFeed
+        include Waqi::Resource::HttpRequest
+
         BASE_URL = 'https://api.waqi.info/'
 
         attr_reader :api_key, :adapter
@@ -9,8 +15,11 @@ module Waqi
         def initialize(api_key:, adapter: Faraday.default_adapter)
             @api_key = api_key
             @adapter = adapter
+            connection
         end
 
+        private 
+        
         def connection
             @connection ||= Faraday.new do |conn|
                 conn.url_prefix = BASE_URL
@@ -23,10 +32,6 @@ module Waqi
 
         def inspect
             self
-        end
-
-        def city_feed
-            CityFeedResouce.new(self)
         end
     end
 end
