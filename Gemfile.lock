@@ -1,27 +1,74 @@
 PATH
   remote: .
   specs:
-    waqi (1.0.0)
+    waqi-ruby (1.0.0)
+      activesupport (>= 6.1)
       faraday (~> 2.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    base64 (0.1.1)
-    faraday (2.7.11)
+    activesupport (7.1.3.2)
       base64
-      faraday-net_http (>= 2.0, < 3.1)
-      ruby2_keywords (>= 0.0.4)
-    faraday-net_http (3.0.2)
-    rake (13.0.6)
-    ruby2_keywords (0.0.5)
+      bigdecimal
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      connection_pool (>= 2.2.5)
+      drb
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      mutex_m
+      tzinfo (~> 2.0)
+    addressable (2.8.6)
+      public_suffix (>= 2.0.2, < 6.0)
+    base64 (0.2.0)
+    bigdecimal (3.1.7)
+    concurrent-ruby (1.2.3)
+    connection_pool (2.4.1)
+    crack (0.4.5)
+      rexml
+    diff-lcs (1.5.1)
+    drb (2.2.1)
+    faraday (2.9.0)
+      faraday-net_http (>= 2.0, < 3.2)
+    faraday-net_http (3.1.0)
+      net-http
+    hashdiff (1.1.0)
+    i18n (1.14.4)
+      concurrent-ruby (~> 1.0)
+    minitest (5.22.3)
+    mutex_m (0.2.0)
+    net-http (0.4.1)
+      uri
+    public_suffix (5.0.4)
+    rexml (3.2.6)
+    rspec (3.13.0)
+      rspec-core (~> 3.13.0)
+      rspec-expectations (~> 3.13.0)
+      rspec-mocks (~> 3.13.0)
+    rspec-core (3.13.0)
+      rspec-support (~> 3.13.0)
+    rspec-expectations (3.13.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-mocks (3.13.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-support (3.13.1)
+    tzinfo (2.0.6)
+      concurrent-ruby (~> 1.0)
+    uri (0.13.0)
+    webmock (3.19.1)
+      addressable (>= 2.8.0)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
 
 PLATFORMS
   x86_64-darwin-21
 
 DEPENDENCIES
-  rake (~> 13.0)
-  waqi!
+  rspec
+  waqi-ruby!
+  webmock
 
 BUNDLED WITH
    2.4.19

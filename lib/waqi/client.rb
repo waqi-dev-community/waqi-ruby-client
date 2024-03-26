@@ -1,5 +1,5 @@
 require 'faraday'
-require "waqi/resources/CityFeed"
+require "waqi/resources/city_feed"
 require "waqi/resources/http_request"
 
 module Waqi
