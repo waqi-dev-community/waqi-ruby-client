@@ -1,7 +1,7 @@
 # WAQI RUBY CLIENT
 
 [![Gem Version](https://img.shields.io/gem/v/waqi-ruby.svg)](https://rubygems.org/gems/waqi-ruby)
-[![Gem](https://img.shields.io/gem/dt/novu.waqi-ruby)](https://rubygems.org/gems/waqi-ruby/)
+[![Gem](https://img.shields.io/gem/dt/waqi-ruby)](https://rubygems.org/gems/waqi-ruby/)
 ![Test Passing](https://github.com/waqi-dev-community/waqi-ruby-client/actions/workflows/main.yml/badge.svg)
 
 > This is a Ruby client for communicating with the [World Air Quality Index API](https://aqicn.org/json-api/doc).
