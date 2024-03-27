@@ -1,34 +1,70 @@
-# Waqi
+# WAQI RUBY CLIENT
 
-TODO: Delete this and the text below, and describe your gem
+[![Gem Version](https://img.shields.io/gem/v/waqi-ruby.svg)](https://rubygems.org/gems/waqi-ruby)
+[![Gem](https://img.shields.io/gem/dt/novu.waqi-ruby)](https://rubygems.org/gems/waqi-ruby/)
+![Test Passing](https://github.com/waqi-dev-community/waqi-ruby-client/actions/workflows/main.yml/badge.svg)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/waqi`. To experiment with that code, run `bin/console` for an interactive prompt.
+> This is a Ruby client for communicating with the [World Air Quality Index API](https://aqicn.org/json-api/doc).
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+You can install the client library via RubyGems:
 
-Install the gem and add to the application's Gemfile by executing:
+```ruby
+gem install waqi-ruby
+```
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+Or add it to your Gemfile:
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+```ruby
+gem 'waqi-ruby'
+```
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+Then run `bundle install`.
 
 ## Usage
 
-TODO: Write usage instructions here
+To use the library, first initialize the client with your API token:
+```ruby
+require 'waqi-ruby'
 
-## Development
+client = Waqi::Client.new(api_key: 'YOUR_API_KEY')
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+You can get your API key by visiting this [link](https://aqicn.org/api/).
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+**For City Feed:**
+```ruby
+client.get_city_feed('beijing')
+```
+
+**For Lat/Lng based Geolocalized Feed:**
+```ruby
+client.get_geo_feed(lat: -87.723900, lng: 41.913600)
+```
+
+**For Ip based Geolocalized Feed:**
+```ruby
+client.get_geo_feed_by_ip
+```
+
+**For Map Queries:**
+```ruby
+client.map_station(latlng: [-87.723900,41.913600], networks: 'all')
+```
+
+> **NOTE:**
+> latlng datatype must be an array in the format [lat1,lng1,lat2,lng2,...].
+> networks datatype must be a string and can value any of the following values - 'all', 'official' (or 'hourly') and 'citizen' (or 'airnet').
+
+**For Station Search:**
+```ruby
+client.search_station("munich")
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/waqi. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/waqi/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/waqi. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/waqi-dev-community/waqi-ruby-client/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -36,4 +72,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Waqi project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/waqi/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the Waqi project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/waqi-dev-community/waqi-ruby-client/blob/main/CODE_OF_CONDUCT.md).
