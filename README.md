@@ -55,7 +55,7 @@ client.map_station(latlng: [-87.723900,41.913600], networks: 'all')
 
 > **NOTE:**
 > latlng datatype must be an array in the format [lat1,lng1,lat2,lng2,...].
-> networks datatype must be a string and can value any of the following values - 'all', 'official' (or 'hourly') and 'citizen' (or 'airnet').
+> networks datatype must be a string and can take any of the following values - 'all', 'official' (or 'hourly') and 'citizen' (or 'airnet').
 
 **For Station Search:**
 ```ruby
