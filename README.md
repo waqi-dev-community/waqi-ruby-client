@@ -26,7 +26,7 @@ Then run `bundle install`.
 
 To use the library, first initialize the client with your API token:
 ```ruby
-require 'waqi-ruby'
+require 'waqi'
 
 client = Waqi::Client.new(api_key: 'YOUR_API_KEY')
 ```
